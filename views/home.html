@@ -1,0 +1,12 @@
+<ons-page ng-controller="homeCtrl">
+	<div id="bb-bookblock" class="bb-bookblock">
+        <div class="bb-item" ng-class="$index==0 ? 'show-block' : '' " ng-swipe-left="swipeLeft()" ng-swipe-right="swipeRight()" ng-repeat="obj in List">
+          <div class="content">
+            <div class="scroller">
+              <img class="news_banner" ng-src="{{obj.Image}}">
+              <p class="news_content" ng-bind-html="obj.Description"></p>
+            </div>
+          </div>
+        </div>
+    </div>
+</ons-page>
