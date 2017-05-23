@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="sampleApp">
+    <head>
+    	<title>Welcome</title>
+    	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta http-equiv="Content-Security-Policy" content="default-src * data:; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    	<script type="text/javascript" src="cordova.js"></script>
+    	<script src="lib/jquery.js"></script>	
+		<script src="lib/angular/angular.js"></script>
+    	<script src="lib/onsen/js/onsenui.js"></script>
+    	<script src="lib/onsen/js/angular-onsenui.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <!-- PageFlip JS -->
+        <script src="lib/page_flip/jquery.bookblock.js"></script>
+		<link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="lib/onsen/css/onsenui.css">
+        <link rel="stylesheet" href="lib/onsen/css/onsen-css-components.css">
+		<!-- page flip css media center -->
+        <link rel="stylesheet" href="css/page_flip/jquery.jscrollpane.custom.css">
+        <link rel="stylesheet" href="css/page_flip/bookblock.css">
+    </head>
+    <body ng-controller="sampleCtrl">
+	    <ons-navigator var="navi">
+		    <ons-page>
+			   <ons-sliding-menu main-page="views/welcome.html" menu-page="views/menu.html" max-slide-distance="260px"></ons-sliding-menu>
+			</ons-page>
+		</ons-navigator>
+		<script type="text/javascript" src="js/welcome.js"></script>
+		<script type="text/javascript" src="js/home.js"></script>
+    </body>
+</html>
