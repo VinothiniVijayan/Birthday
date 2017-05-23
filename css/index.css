@@ -1,0 +1,43 @@
+body,html {
+    height: 100%;
+	overflow: hidden;
+}
+.welcomeDiv{
+   height:100%;
+}
+.beforeTimer{
+	background: url('../img/wallpaper.jpg') no-repeat;
+    position: relative;
+    text-align:center;
+   height:100%;
+}
+.afterTimer{
+	background-color: #eeeeee;
+    position: relative;
+    text-align:center;
+   height:100%;
+}
+.imageCenter{
+   margin:10px;
+   padding:10px;
+   text-align:center;
+   width:100px;
+   height:100px;
+}
+.welcomeButton{
+   margin:10px;
+   padding:10px;
+   text-align:center;
+   width:100px;
+   height:100px;
+}
+.timerImage{
+    background: url('../img/home-button.jpg') bottom no-repeat;   
+}
+.dialogPopup{
+    text-align:center;
+}
+.popupImage{
+   width:50px;
+   height:50px;  
+}
