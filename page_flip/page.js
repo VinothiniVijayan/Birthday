@@ -1,4 +1,3 @@
-console.log(newsDetailObject);
 var	bb, $container;
 
 function bookblock() {
@@ -27,6 +26,6 @@ function bookblock() {
 	supportTransitions = Modernizr.csstransitions;
 }
 
-DOMCheck('.bb-item:nth-child('+newsDetailObject+')', bookblock);
-DOMCheck('.bb-item:nth-child('+newsDetailObject+')', swipeLeft);
-DOMCheck('.bb-item:nth-child('+newsDetailObject+')', swipeRight);
+DOMCheck('.bb-item:nth-child('+listCount+')', bookblock);
+DOMCheck('.bb-item:nth-child('+listCount+')', swipeLeft);
+DOMCheck('.bb-item:nth-child('+listCount+')', swipeRight);
