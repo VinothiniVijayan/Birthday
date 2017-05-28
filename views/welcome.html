@@ -2,18 +2,18 @@
 <div class="welcomeDiv">
     <div class="beforeTimer" ng-if="showTimer">
 		<div class="timerDiv">
-		    <img src="img/home-button.jpg" class="imageCenter">	
-			<p ng-show="hitTimer"> {{seconds}}</p>
+		    <img src="img/gifts.gif" class="imageCenter"/>	
+			<div ng-show="hitTimer" class="hitTimer"><span class="timerText"> {{minutes}} minutes {{seconds}} seconds to go</span></div>
 		</div>
 	</div>
 	<div class="afterTimer" ng-show="showButton">
         <div class="welcomePage">
-		    <img class="welcomeButton" src="img/gift.gif" ng-click="welcomeTo();"></img>
+		    <img class="welcomeButton" src="img/mario.gif" ng-click="welcomeTo();"></img>
 	    </div>
 	</div>
 	<ons-dialog var="wishingPopup">
 	    <div class="dialogPopup">
-			<img src="img/gift.gif" class="popupImage" />
+			<img src="img/image4.gif" class="popupImage" />
 		</div>	
 	</ons-dialog>
 </div>	

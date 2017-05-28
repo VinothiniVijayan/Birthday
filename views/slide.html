@@ -1,0 +1,18 @@
+<ons-page ng-controller="homeCtrl">
+    <div class="slideView">
+	    <ons-row class="sliderow">
+		    <ons-col>
+			    <!--<ons-carousel auto-scroll>
+				<ons-carousel-item ng-repeat="slide in List">
+				    <img ng-src="{{slide.image}}"/>
+				</ons-carousel-item>
+				</ons-carousel>-->
+				<ons-carousel class="slideCarousel" swipeable fullscreen var="carousel">
+                    <ons-carousel-item ng-repeat="slide in List">
+				        <img ng-src="{{slide.image}}"/>
+                    </ons-carousel-item>
+                </ons-carousel>
+			</ons-col> 
+		</ons-row>  
+	</div>  
+</ons-page>
