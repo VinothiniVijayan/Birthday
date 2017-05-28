@@ -1,0 +1,11 @@
+@font-face {
+	font-family: 'DiscipuliBritannica';
+	src: url('./DiscipuliBritannica.eot');
+	src: local('DiscipuliBritannica'), url('./DiscipuliBritannica.woff') format('woff'), url('./DiscipuliBritannica.ttf') format('truetype');
+}
+/* use this class to attach this font to any element i.e. <p class="fontsforweb_fontid_66771">Text with this font applied</p> */
+.fontsforweb_fontid_66771 {
+	font-family: 'DiscipuliBritannica' !important;
+}
+
+/* Font downloaded from FontsForWeb.com */

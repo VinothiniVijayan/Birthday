@@ -6,23 +6,35 @@ body,html {
    height:100%;
 }
 .beforeTimer{
-	background: url('../img/wallpaper.jpg') no-repeat;
+	background: url('../img/wallpaper6.jpg') no-repeat;
     position: relative;
     text-align:center;
-   height:100%;
+    height:100%;
+    background-size: 100% 100%;
 }
 .afterTimer{
-	background-color: #eeeeee;
+	background: url('../img/wallapper.jpg') no-repeat;
     position: relative;
     text-align:center;
-   height:100%;
+    height:100%;
+	background-size:100% 100%;
 }
 .imageCenter{
-   margin:10px;
-   padding:10px;
-   text-align:center;
-   width:100px;
-   height:100px;
+    text-align:center;   
+    width: 200px;
+    height: 200px;
+    padding-top: 150px;
+}
+.hitTimer{
+	margin: 10px;
+    width: 130px;
+    padding-left: 30%;
+}
+.timerText{
+	font-size: 20px;
+    color: currentColor;
+    font-weight: bold;
+    font-family: 'DiscipuliBritannica';
 }
 .welcomeButton{
    margin:10px;
@@ -30,6 +42,7 @@ body,html {
    text-align:center;
    width:100px;
    height:100px;
+   padding-top:20px;
 }
 .timerImage{
     background: url('../img/home-button.jpg') bottom no-repeat;   
@@ -38,8 +51,8 @@ body,html {
     text-align:center;
 }
 .popupImage{
-   width:50px;
-   height:50px;  
+   width:100%;
+   height:100%;  
 }
 .popupImage hover{
    transform: scale(1.1);
@@ -47,6 +60,14 @@ body,html {
 .news_banner {
 	height: 150px;
     width: 100%;
+}
+#turnPage{
+	width:100%;
+	height:752px;
+}
+#turnPage .turn-page{
+	background-color:#ccc;
+	background-size:100% 100%;
 }
 .scroller + div {
 	padding: 10px;
@@ -59,4 +80,24 @@ body,html {
 }
 .bb-item {
 	display: none;
+}
+.slideCarousel{
+	width:100%;
+	height:500px;
+}
+.storyText{
+	font-family: 'DiscipuliBritannica';
+    font-size: 18px;
+    font-weight: bold;
+}
+.storyContent{
+	background: url(../img/page2.jpg) no-repeat;
+    background-size: 130% 146%;
+    padding: 5px !important;
+    background-position: center;
+
+}
+.story{
+	padding: 50px;
+    margin-top: 140px;
 }
