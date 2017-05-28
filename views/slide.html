@@ -1,0 +1,13 @@
+<ons-page ng-controller="homeCtrl">
+    <div class="slideView">
+	    <ons-row>
+		    <ons-col>
+			    <ons-carousel>
+				<ons-carousel-item ng-repeat="slide in List">
+				    <img ng-src="{{slide.image}}"/>
+				</ons-carousel-item>
+				</ons-carousel>
+			</ons-col> 
+		</ons-row>  
+	</div>  
+</ons-page>
