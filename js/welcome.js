@@ -1,20 +1,22 @@
 app.controller("welcomeCtrl",['$scope','$timeout','$interval',function($scope,$timeout,$interval){
 
 	$scope.timerS = $interval(function(){
-	    var countDownDate = new Date("May 23, 2017 11:01:00").getTime();
+	    var countDownDate = new Date("May 28, 2017 00:53:00").getTime();
 		var now = new Date().getTime();
 		if(countDownDate > now){
 		    console.log("Show Timer");
 		    $scope.showButton = false; 
       		$scope.showTimer = true;
+			$scope.birthdayImage = false;
 			// Find the distance between now an the count down date
 			var distance = countDownDate - now;
 			$scope.hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 			$scope.minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 			$scope.seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			console.log($scope.seconds);
 			if($scope.hours == 0 && $scope.minutes == 0 && $scope.seconds == 0){
      			$scope.callStopTimer();
-			} else if($scope.hours == 0 && $scope.minutes == 0 && $scope.seconds < 10 ){
+			} else {
 			    $scope.hitTimer = true;
 			}
 		}else{
@@ -23,12 +25,16 @@ app.controller("welcomeCtrl",['$scope','$timeout','$interval',function($scope,$t
 	},1000);
 	
 	$scope.callStopTimer = function(){
-	        $scope.wishingPopup.show();
-	    $timeout(function(){
-	        $scope.wishingPopup.hide();
-	    },20000);
+		$scope.birthdayImage = true;
+		$scope.showTimer = true;
+		$timeout(function(){
+        	$scope.showTimer = false;
+			$scope.wishingPopup.show();
+			$timeout(function(){
+	            $scope.wishingPopup.hide();
+	        },10000);
+		},10000);
 		$scope.showButton = true;
-    	$scope.showTimer = false;
 	    $interval.cancel($scope.timerS);
 	}
 	
