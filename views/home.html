@@ -1,7 +1,9 @@
 <ons-page ng-controller="homeCtrl">
-<div id="container">
-	<div id="bb-bookblock" class="bb-bookblock">
-        <div class="bb-item" ng-class="$index==0 ? 'show-block' : '' " ng-swipe-left="swipeLeft()" ng-swipe-right="swipeRight()" ng-repeat="obj in List" ng-click="slide();">
+<div id="news_template">
+  <div id="container" class="container">  
+    <div class="bb-custom-wrapper">
+      <div id="bb-bookblock" class="bb-bookblock">
+        <div class="bb-item" ng-class="$index==0 ? 'show-block' : '' " ng-swipe-left="swipeLeft()" ng-swipe-right="swipeRight()" ng-repeat="obj in List">
           <div class="content">
             <div class="scroller">
               <img class="news_banner" ng-src="{{obj.image}}">
@@ -9,11 +11,13 @@
             </div>
           </div>
         </div>
-    </div>
+      </div>
+    </div>        
+  </div>
 </div>
 <div id="turnPage">
 	<div ng-repeat="objs in List" ng-click="story();">
-        <img ng-src="{{objs.image}}"/>
+        <img class="news_banner" ng-src="{{objs.image}}"/>
     </div>
 </div>
 </ons-page>
