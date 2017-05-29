@@ -1,9 +1,9 @@
 var listCount;
 app.controller("homeCtrl",['$scope',function($scope){
     console.log("Home"); 
-	var list = [{'image':'./img/image1.jpg','content':'Image 1'},
-		{'image':'./img/image2.jpg','content':'Image 1'},
-			{'image':'./img/image3.png','content':'Image 1'}];
+	var list = [{'image':'./img/image1s.jpg','content':'Image 1'},
+		{'image':'./img/image2s.jpg','content':'Image 1'},
+			{'image':'./img/image3s.png','content':'Image 1'}];
 	$scope.List = angular.copy(list);
 	$scope.flipCount = 0;
     $scope.totalCount = $scope.List.length;
@@ -11,9 +11,9 @@ app.controller("homeCtrl",['$scope',function($scope){
 	console.log(listCount);
 	$(window).ready(function(){
         $('#turnPage').turn({
-            display:'double',
-            acceleration: true,
-            elevation:50
+		    width: 400,
+		    height: 300,
+		    autoCenter: true
         });
     });
 

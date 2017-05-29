@@ -1,5 +1,6 @@
 app.controller("welcomeCtrl",['$scope','$timeout','$interval',function($scope,$timeout,$interval){
 
+    $scope.secret = [{"secret":"Rewind Back","page":"home"},{"secret":"Memories","page":"slide"},{"secret":"Between Us","page":"story"}];
 	$scope.timerS = $interval(function(){
 	    var countDownDate = new Date("May 28, 2017 00:53:00").getTime();
 		var now = new Date().getTime();
@@ -39,8 +40,28 @@ app.controller("welcomeCtrl",['$scope','$timeout','$interval',function($scope,$t
 	}
 	
 	$scope.welcomeTo = function(){
-	    $scope.navi.pushPage('views/home.html',{animation:'top'})
+	    //$scope.buttonPopup.show(); 
+		$scope.navi.pushPage('views/home.html',{animation:'top'});
 	}
+	
+	$scope.go = function(){
+	    $scope.passText = $scope.passwordText;
+	    console.log($scope.passText);
+	    if($scope.passText == null || $scope.passText == undefined){
+			ons.notification.alert({title:"OOPS",message:"Know your secret code to open your suprise"});
+		} else{
+	    for(var i in $scope.secret){
+	        if($scope.secret[i].secret == $scope.passText){
+	            $scope.buttonPopup.show();
+	            $scope.navi.pushPage('views/'+$scope.secret[i].page+'.html',{animation:'top'});
+	     	} else{
+			    ons.notification.alert({title:"OOPS",message:"Know your secret code to open your suprise"});
+			}
+	    }
+		}
+		$scope.$apply();
+	}
+	
 	$scope.barcode = function(){
 	function hasCameraPermission() {
     cordova.plugins.barcodeScanner.hasCameraPermission(
