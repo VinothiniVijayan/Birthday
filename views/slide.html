@@ -1,13 +1,22 @@
 <ons-page ng-controller="homeCtrl">
     <div class="slideView">
-	    <ons-row>
-		    <ons-col>
-			    <ons-carousel>
-				<ons-carousel-item ng-repeat="slide in List">
-				    <img ng-src="{{slide.image}}"/>
-				</ons-carousel-item>
-				</ons-carousel>
-			</ons-col> 
-		</ons-row>  
+	    <ons-row class="sliderow">
+			<ons-col>
+                <ons-carousel ns-postchange="console.log('Changed to ' + $event.activeIndex)"
+                                      style="height: 115px; width: 100%"
+                                      swipeable
+                                      auto-scroll overscrollable auto-refresh>                            
+                    <ons-carousel-item id="$index" ng-repeat="slide in List track by $index">
+                        <ons-row>
+                            <ons-col>
+                                <div>
+									<img class="news_banner" ng-src="{{slide.image}}"/>
+                                </div>
+                            </ons-col>                                    
+                        </ons-row>
+                    </ons-carousel-item>
+                </ons-carousel>
+            </ons-col>
+		</ons-row>
 	</div>  
 </ons-page>
