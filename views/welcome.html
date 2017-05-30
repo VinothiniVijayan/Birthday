@@ -2,25 +2,26 @@
 <div class="welcomeDiv">
     <div class="beforeTimer" ng-if="showTimer">
 		<div class="timerDiv">
-		    <img src="img/giftss.gif" class="imageCenter"/>	
+		    <img src="img/gifts.gif" class="imageCenter"/>	
 			<div ng-show="hitTimer" class="hitTimer"><span class="timerText"> {{minutes}} minutes {{seconds}} seconds to go</span></div>
 		</div>
 	</div>
-	<div class="afterTimer" ng-show="showButton">
+	<div class="afterTimer" ng-if="showButton">
         <div class="welcomePage">
-		    <img class="welcomeButton" src="img/marios.gif" ng-click="welcomeTo();"></img>
+			<!--<img src="img/slides/main.jpg" class="welcomeButton" />-->
+			<img src="img/box.gif" class="boxImage" ng-click="welcomeTo();"/>
 	    </div>
 	</div>
 	<ons-dialog var="wishingPopup">
 	    <div class="dialogPopup">
-			<img src="img/image4s.gif" class="popupImage" />
-		</div>	
+			<img src="img/image4.gif" class="popupImage" />
+		</div>
 	</ons-dialog>
-	<ons-dialog var="buttonPopup">
+	<ons-dialog var="buttonPopup" ng-controller="buttonCtrl">
 	    <div class="dialogPopup">
-			<input type="text" ng-model="passwordText"/>
-			<input type="button" class="buttonToGo" value="Go" ng-click="go();"/>
+			<input type="text" ng-model="passwordText" class="secretText" />
+			<input type="button" class="buttonToGo" value="Go" ng-click="go();" />
 		</div>	
 	</ons-dialog>
-</div>	
+</div>
 </ons-page>
