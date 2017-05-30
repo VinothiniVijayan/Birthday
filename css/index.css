@@ -13,11 +13,12 @@ body,html {
     background-size: 100% 100%;
 }
 .afterTimer{
-	background: url('../img/wallapper.jpg') no-repeat;
+	background: url('../img/slides/main.jpg') no-repeat;
     position: relative;
     text-align:center;
     height:100%;
 	background-size:100% 100%;
+	background-position: center;
 }
 .imageCenter{
     text-align:center;   
@@ -37,12 +38,12 @@ body,html {
     font-family: 'DiscipuliBritannica';
 }
 .welcomeButton{
-   margin:10px;
-   padding:10px;
-   text-align:center;
-   width:100px;
-   height:100px;
-   padding-top:20px;
+   width:100%;
+   height:100%;
+}
+.boxImage{
+	float:right;
+	padding:10px;
 }
 .timerImage{
     background: url('../img/home-button.jpg') bottom no-repeat;   
@@ -86,13 +87,14 @@ body,html {
 	height:500px;
 }
 .storyText{
-	font-family: 'DiscipuliBritannica';
-    font-size: 18px;
+	font-family: 'Comic Sans MS';
+    font-size: 17px;
+    line-height: 20px;
     font-weight: bold;
 }
 .storyContent{
-	background: url(../img/page2.jpg) no-repeat;
-    background-size: 130% 146%;
+	background: url(../img/pages.jpg) no-repeat;
+    background-size: 105% 130%;
     padding: 5px !important;
     background-position: center;
 
@@ -100,4 +102,46 @@ body,html {
 .story{
 	padding: 50px;
     margin-top: 140px;
+}
+.slideView{
+	height:100%;
+	width:100%;
+}
+.sliderow{
+	background:url(../img/page11.jpg) no-repeat;
+	background-size: 100% 100%;
+	height:100%;
+	width:100%;
+}
+.slideImage{
+	height:auto;
+	width:100%;
+}
+.slideContent{
+	background: white;
+    padding: 13%;
+    margin: 3%;
+}
+.homeImage{
+	height: 100px;
+    width: 100px;
+    padding: 35%;
+    margin-top: 40%;
+}
+.goHome{
+	background: url(../img/page15.jpg) no-repeat;
+	background-size: 100% 100%;
+	height:100%;
+}
+.content{
+	height:100%;
+	width:100%;
+}
+.backButton{
+	width:100px;
+	height:100px;
+	float:left;
+}
+.slideImg{
+	padding:10px;
 }
