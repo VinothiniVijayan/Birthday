@@ -1,7 +1,7 @@
-app.controller("welcomeCtrl",['$scope','$timeout','$interval',function($scope,$timeout,$interval){
+app.controller("welcomeCtrl",['$scope','$timeout','$interval',function($scope,$timeout,$interval,$modalInstance){
 
-    $scope.secret = [{"secret":"Rewind Back","page":"home"},{"secret":"Memories","page":"slide"},{"secret":"Between Us","page":"story"}];
-	$scope.timerS = $interval(function(){
+    $scope.timerS = $interval(function(){
+        $scope.showButton = false;
 	    var countDownDate = new Date("May 28, 2017 00:53:00").getTime();
 		var now = new Date().getTime();
 		if(countDownDate > now){
@@ -27,74 +27,39 @@ app.controller("welcomeCtrl",['$scope','$timeout','$interval',function($scope,$t
 	
 	$scope.callStopTimer = function(){
 		$scope.birthdayImage = true;
+		$scope.showButton = false; 
 		$scope.showTimer = true;
 		$timeout(function(){
         	$scope.showTimer = false;
+		    $scope.showButton = true;
 			$scope.wishingPopup.show();
 			$timeout(function(){
 	            $scope.wishingPopup.hide();
 	        },10000);
 		},10000);
-		$scope.showButton = true;
 	    $interval.cancel($scope.timerS);
 	}
 	
 	$scope.welcomeTo = function(){
-	    //$scope.buttonPopup.show(); 
-		$scope.navi.pushPage('views/home.html',{animation:'top'});
+	    $scope.buttonPopup.show(); 
+		//$scope.navi.pushPage('views/home.html',{animation:'top'});
 	}
-	
+}]);
+app.controller('buttonCtrl',['$scope',function($scope){
+	$scope.secret = [{"secrets":"Rewind Back","page":"home"},{"secrets":"Memories","page":"slide"},{"secrets":"Between Us","page":"story"}];
 	$scope.go = function(){
-	    $scope.passText = $scope.passwordText;
-	    console.log($scope.passText);
-	    if($scope.passText == null || $scope.passText == undefined){
+	    var passText = $scope.passwordText;
+	    console.log($scope.passwordText);
+	    if(passText == null || passText == undefined){
 			ons.notification.alert({title:"OOPS",message:"Know your secret code to open your suprise"});
-		} else{
-	    for(var i in $scope.secret){
-	        if($scope.secret[i].secret == $scope.passText){
-	            $scope.buttonPopup.show();
-	            $scope.navi.pushPage('views/'+$scope.secret[i].page+'.html',{animation:'top'});
-	     	} else{
-			    ons.notification.alert({title:"OOPS",message:"Know your secret code to open your suprise"});
-			}
-	    }
+		} else if(passText == "Memories"){
+			$scope.navi.pushPage('views/slide.html',{animation:"left"});
+		} else if(passText == "Rewind Back"){
+			$scope.navi.pushPage('views/home.html',{animation:"left"});
+		} else if(passText == "Between"){
+			$scope.navi.pushPage('views/story.html',{animation:"left"});
+		} else {
+			ons.notification.alert({title:"OOPS",message:"Know your secret code to open your suprise"});			
 		}
-		$scope.$apply();
 	}
-	
-	$scope.barcode = function(){
-	function hasCameraPermission() {
-    cordova.plugins.barcodeScanner.hasCameraPermission(
-      function(result) {
-        // if this is 'false' you probably want to call 'requestCameraPermission' now
-        alert(result);
-      },function(error) {
-	     alert(error);
-	  }
-    )
-  }
-	   cordova.plugins.barcodeScanner.scan(
-      function (result) {
-          alert("We got a barcode\n" +
-                "Result: " + result.text + "\n" +
-                "Format: " + result.format + "\n" +
-                "Cancelled: " + result.cancelled);
-      },
-      function (error) {
-          alert("Scanning failed: " + error);
-      },
-      {
-          preferFrontCamera : true, // iOS and Android
-          showFlipCameraButton : true, // iOS and Android
-          showTorchButton : true, // iOS and Android
-          torchOn: true, // Android, launch with the torch switched on (if available)
-          prompt : "Place a barcode inside the scan area", // Android
-          resultDisplayDuration: 500, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
-          formats : "QR_CODE,PDF_417", // default: all but PDF_417 and RSS_EXPANDED
-          orientation : "landscape", // Android only (portrait|landscape), default unset so it rotates with the device
-          disableAnimations : true, // iOS
-          disableSuccessBeep: false // iOS
-      }
-   );
-	}
-}])
+}]);
