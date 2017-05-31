@@ -1,4 +1,4 @@
-app.controller("welcomeCtrl",['$scope','$timeout','$interval',function($scope,$timeout,$interval,$modalInstance){
+app.controller("welcomeCtrl",['$scope','$rootScope','$timeout','$interval',function($scope,$rootScope,$timeout,$interval,$modalInstance){
 
     $scope.timerS = $interval(function(){
         $scope.showButton = false;
@@ -26,8 +26,10 @@ app.controller("welcomeCtrl",['$scope','$timeout','$interval',function($scope,$t
 	},1000);
 	
 	$scope.callStopTimer = function(){
+	    
 		$scope.birthdayImage = true;
 		$scope.showButton = false; 
+		if($rootScope.newPage == undefined){
 		$scope.showTimer = true;
 		$timeout(function(){
         	$scope.showTimer = false;
@@ -37,6 +39,7 @@ app.controller("welcomeCtrl",['$scope','$timeout','$interval',function($scope,$t
 	            $scope.wishingPopup.hide();
 	        },10000);
 		},10000);
+		}
 	    $interval.cancel($scope.timerS);
 	}
 	
@@ -46,7 +49,6 @@ app.controller("welcomeCtrl",['$scope','$timeout','$interval',function($scope,$t
 	}
 }]);
 app.controller('buttonCtrl',['$scope',function($scope){
-	$scope.secret = [{"secrets":"Rewind Back","page":"home"},{"secrets":"Memories","page":"slide"},{"secrets":"Between Us","page":"story"}];
 	$scope.go = function(){
 	    var passText = $scope.passwordText;
 	    console.log($scope.passwordText);
@@ -54,9 +56,9 @@ app.controller('buttonCtrl',['$scope',function($scope){
 			ons.notification.alert({title:"OOPS",message:"Know your secret code to open your suprise"});
 		} else if(passText == "Memories"){
 			$scope.navi.pushPage('views/slide.html',{animation:"left"});
-		} else if(passText == "Rewind Back"){
-			$scope.navi.pushPage('views/home.html',{animation:"left"});
-		} else if(passText == "Between"){
+		} else if(passText == "Rewind"){
+			$scope.navi.pushPage('views/rewind.html',{animation:"left"});
+		} else if(passText == "Between Us"){
 			$scope.navi.pushPage('views/story.html',{animation:"left"});
 		} else {
 			ons.notification.alert({title:"OOPS",message:"Know your secret code to open your suprise"});			
