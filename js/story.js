@@ -1,6 +1,6 @@
-app.controller('storyctrl',['$scope',function($scope){
+app.controller('storyCtrl',['$scope','$rootScope',function($scope,$rootScope){
     $scope.back = function(){
 	    $rootScope.newPage = "Story";
-	    $scope.navi.popPage();
+	    $scope.navi.pushPage('views/welcome.html',{animation:'true'});
 	}
 }])

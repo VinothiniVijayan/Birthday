@@ -8,6 +8,6 @@ app.controller('slideCtrl',['$scope',function($scope){
 	
 	$scope.back = function(){
 	    $rootScope.newPage = "Slide";
-		$scope.navi.popPage();
+		$scope.navi.pushPage('views/welcome.html',{animation:'true'});
 	}
 }])
