@@ -1,0 +1,32 @@
+<ons-page ng-controller="rewindCtrl">
+<!--<div id="container">
+	<div id="bb-bookblock" class="bb-bookblock">
+        <div class="bb-item" ng-class="$index==0 ? 'show-block' : '' " ng-swipe-left="swipeLeft()" ng-swipe-right="swipeRight()" ng-repeat="obj in List" ng-click="slide();">
+          <div class="content">
+              <img class="news_banner" ng-src="{{obj.image}}">
+              <p class="news_content" ng-bind-html="obj.content"></p>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="turnPage">
+	<div ng-repeat="objs in List" ng-click="story();">
+        <img class="news_banner" ng-src="{{objs.image}}"/>
+    </div>
+</div>-->
+<div class="slideView">
+                <ons-carousel ns-postchange="console.log('Changed to ' + $event.activeIndex)"
+                                      style="height: 100%; width: 100%"
+                                      swipeable
+                                      auto-scroll overscrollable auto-refresh>                            
+                    <ons-carousel-item id="$index" ng-repeat="slide in List track by $index">
+                        <div class="sliderow">
+							<div class="slideImg"><img class="slideImage" ng-src="{{slide.image}}"/></div>
+							<div class="slideContent"><span ng-bind-html="slide.content"></span></div>
+		                <div class="backButton" ng-if="$index == 10">
+						    <img height="100px" src="img/back.png" ng-click="back();"/>
+						</div>
+</div>
+                    </ons-carousel-item>
+                </ons-carousel>
+</ons-page>

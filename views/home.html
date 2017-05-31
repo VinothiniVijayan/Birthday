@@ -1,33 +1,20 @@
-<ons-page ng-controller="homeCtrl">
-<!--<div id="container">
-	<div id="bb-bookblock" class="bb-bookblock">
-        <div class="bb-item" ng-class="$index==0 ? 'show-block' : '' " ng-swipe-left="swipeLeft()" ng-swipe-right="swipeRight()" ng-repeat="obj in List" ng-click="slide();">
-          <div class="content">
-              <img class="news_banner" ng-src="{{obj.image}}">
-              <p class="news_content" ng-bind-html="obj.content"></p>
-            </div>
-        </div>
-    </div>
+<ons-page ng-controller="homectrl">
+<div class="afterTimer">
+        <div class="welcomePage">
+			<!--<img src="img/slides/main.jpg" class="welcomeButton" />-->
+			<img src="img/box.gif" class="boxImage" ng-click="welcomeTo();"/>
+	    </div>
 </div>
-<div id="turnPage">
-	<div ng-repeat="objs in List" ng-click="story();">
-        <img class="news_banner" ng-src="{{objs.image}}"/>
-    </div>
-</div>-->
-<div class="slideView">
-                <ons-carousel ns-postchange="console.log('Changed to ' + $event.activeIndex)"
-                                      style="height: 100%; width: 100%"
-                                      swipeable
-                                      auto-scroll overscrollable auto-refresh>                            
-                    <ons-carousel-item id="$index" ng-repeat="slide in List track by $index">
-                        <div class="sliderow">{{$index}}
-							<div class="slideImg"><img class="slideImage" ng-src="{{slide.image}}"/></div>
-							<div class="slideContent"><span ng-bind-html="slide.content"></span></div>
-                        </div><p>{{List.length-1}}</p>
-		                <div class="backButton" ng-if="$index == (List.length-1)">
-						    <img height="100px" src="img/back.png" ng-click="back();"/>
-						</div>
-                    </ons-carousel-item>
-                </ons-carousel>
+<ons-dialog var="wishingPopup">
+	    <div class="dialogPopup">
+			<img src="img/image3.gif" class="popupImage" />
+		</div>
+</ons-dialog>
+<ons-dialog var="buttonPopup">
+    <div class="dialogPopup" style="background:antiquewhite;" ng-controller="buttonCtrl">
+		<input style="margin:10%;" type="text" ng-model="passwordText" class="secretText" />
+		<input style="margin:5%;" type="button" class="buttonToGo" value="Go" ng-click="go();" />
+	</div>	
+</ons-dialog>
 </div>
-</ons-page>
+</div>
