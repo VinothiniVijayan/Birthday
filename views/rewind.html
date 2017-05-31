@@ -21,11 +21,11 @@
                                       auto-scroll overscrollable auto-refresh>                            
                     <ons-carousel-item id="$index" ng-repeat="slide in List track by $index">
                         <div class="sliderow">
+		                    <div class="backButton" ng-if="$index == 10">
+						        <img height="100px" src="img/back.png" ng-click="back();"/>
+						    </div>
 							<div class="slideImg"><img class="slideImage" ng-src="{{slide.image}}"/></div>
-							<div class="slideContent"><span ng-bind-html="slide.content"></span></div>
-		                <div class="backButton" ng-if="$index == 10">
-						    <img height="100px" src="img/back.png" ng-click="back();"/>
-						</div>
+							<div class="slideContent"><span class="slideTextContent" ng-bind-html="slide.content"></span></div>
 </div>
                     </ons-carousel-item>
                 </ons-carousel>
