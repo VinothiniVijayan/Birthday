@@ -9,12 +9,17 @@
 		<script src="lib/angular/angular.js"></script>
     	<script src="lib/onsen/js/onsenui.js"></script>
     	<script src="lib/onsen/js/angular-onsenui.js"></script>
+		<script src="lib/angular/angular-sanitize.min.js"></script>
+		<script src="lib/angular/angular-animate.min.js"></script>
+		<script src="lib/angular/angular-touch.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <!-- PageFlip JS -->
         <script src="lib/page_flip/jquery.bookblock.js"></script>
+        <script src="lib/page_flip/turn.js"></script>
 		<link rel="stylesheet" href="css/index.css">
         <link rel="stylesheet" href="lib/onsen/css/onsenui.css">
         <link rel="stylesheet" href="lib/onsen/css/onsen-css-components.css">
+        <link rel="stylesheet" href="css/discipline/font.css">
 		<!-- page flip css media center -->
         <link rel="stylesheet" href="css/page_flip/jquery.jscrollpane.custom.css">
         <link rel="stylesheet" href="css/page_flip/bookblock.css">
@@ -22,10 +27,13 @@
     <body ng-controller="sampleCtrl">
 	    <ons-navigator var="navi">
 		    <ons-page>
-			   <ons-sliding-menu main-page="views/welcome.html" menu-page="views/menu.html" max-slide-distance="260px"></ons-sliding-menu>
+			   <ons-sliding-menu main-page="views/welcome.html" menu-page="views/menu.html" max-slide-distance="260px" swipeable="false"></ons-sliding-menu>
 			</ons-page>
 		</ons-navigator>
 		<script type="text/javascript" src="js/welcome.js"></script>
-		<script type="text/javascript" src="js/home.js"></script>
+		<!--<script type="text/javascript" src="js/home.js"></script>-->
+		<script type="text/javascript" src="js/story.js"></script>
+		<script type="text/javascript" src="js/rewind.js"></script>
+		<script type="text/javascript" src="js/slide.js"></script>
     </body>
 </html>
